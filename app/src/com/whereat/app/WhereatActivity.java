@@ -2,6 +2,7 @@ package com.whereat.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.webkit.WebView;
 
 public class WhereatActivity extends Activity {
 
@@ -13,7 +14,8 @@ public class WhereatActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-	mWebView = (WebView) findViewById(R.id.webview);
-	mwebView.loadURL("http://www.thedailynerd.com");
+		mWebView = (WebView) findViewById(R.id.webview);
+		mWebView.getSettings().setJavaScriptEnabled(true);
+		mWebView.loadUrl("http://www.thedailynerd.com");
     }
 }
