@@ -22,7 +22,7 @@ public class WhereatActivity extends Activity implements LocationUpdateListener 
 
 		// Set up location updates
 		locationHelper = new LocationHelper(this);
-		locationHelper.registerForUpdates(this);
+		//locationHelper.registerForUpdates(this);
 		
 		//Setup WebView
 		mWebView = (WebView) findViewById(R.id.webview);
@@ -41,6 +41,11 @@ public class WhereatActivity extends Activity implements LocationUpdateListener 
 				Log.d("Whereat",message + " -- LINE: " + lineNumber + " : " + sourceID);
 			}
 		});
+	}
+	
+	@Override
+	public void onBackPressed(){
+		this.finish(); //Stop it from doing location pooling.
 	}
 
 	public void onLocationUpdate(Location location) {
