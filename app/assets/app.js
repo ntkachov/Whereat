@@ -1,3 +1,4 @@
 $(function(){
-	$("body").append("This is Jquery Working");
+	WhereatDB.putPref("Test", "DBTEST worked!");
+	$("body").append(WhereatDB.getPref("Test"));
 });
