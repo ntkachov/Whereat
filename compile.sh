@@ -1,4 +1,5 @@
 rm app/assets/view.html
+find app/assets | grep ".swp" | xargs rm
 echo "<html><head><script type=\"text/javascript\">" > app/assets/view
 find app/assets | grep ".js" | xargs cat  >> app/assets/view
 echo "</script><style>" >> app/assets/view
