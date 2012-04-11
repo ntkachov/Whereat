@@ -9,6 +9,13 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+/**
+ * Helper class for listening for location updates.
+ * 
+ * Usage:
+ * LocationHelper helper = new LocationHelper(Context);
+ * helper.registerForUpdates(LocationUpdateListener);
+ */
 public class LocationHelper {
 
 	private Context context;
