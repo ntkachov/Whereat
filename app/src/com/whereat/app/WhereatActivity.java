@@ -44,7 +44,7 @@ public class WhereatActivity extends Activity implements LocationUpdateListener 
 	}
 
 	public void onLocationUpdate(Location location) {
-		Log.d("Whereat", "lat " + location.getLatitude() + " lng " + location.getLongitude());
+		Log.d("Whereat", "lat " + location.getLatitude() + " lng " + location.getLongitude()); 
 	}
 
 }

@@ -63,7 +63,7 @@ public class LocationHelper {
 
 		// Register the listener with the Location Manager to receive location
 		// updates
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
-				0, locationListener);
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 18000,
+				100, locationListener);
 	}
 }

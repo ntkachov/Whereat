@@ -14,7 +14,6 @@ html {
 	border: 0;
 	display: inline;
 	box-sizing: border-box;
-	background-color: green;
 	padding: 0;
 }
 
@@ -23,7 +22,6 @@ body {
 	margin: 0;
 	border: 0;
 	display: inline; box-sizing : border-box;
-	background-color: red;
 	box-sizing: border-box;
 	padding: 0;
 }
@@ -39,24 +37,45 @@ div {
 div.topBar {
 	width: 100%;
 	height: 3em;
-	background-color: #aaa;
+	background-color: #99d;
 	border: 1px solid black;
+}
+
+div.topBar div{
+	float:left;
+	height:100%;
 }
 
 div.button{
 	border-left:1px solid #888;
 	border-rigth:1px solid #555;
+	padding-left:4px;
+	padding-right:4px;
 }
 
 #title {
 	font-size:2em;
 	font-weight: bold;
 }
+
+.friendBox {
+	width:100%;
+	height:2em;
+	border-top:1px solid #888;
+	border-bottom:1px solid #555;
+}
 </style></head><body>
 <div class="topBar">
 	<div class="button">
 	<div id="Title">Where@</div>
 	</div>
-	<div class="button" style="width:25%"></div>
+	<div class="button" style="padding-top:.8em;" >Your Status:</div>
+</div>
+
+<div class="friendList">
+	<div class="friendBox"> [FriendName] Is nowhere near you </div>
+	<div class="friendBox"> [FriendName] Is near by </div>
+	<div class="friendBox"> [FriendName] Is in the same place as you </div>
+
 </div>
 </body></html>
