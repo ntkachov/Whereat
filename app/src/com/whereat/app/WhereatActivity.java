@@ -24,7 +24,7 @@ public class WhereatActivity extends Activity {
 		//Setup WebView
 		mWebView = (WebView) findViewById(R.id.webview);
 		mWebView.getSettings().setJavaScriptEnabled(true);
-		
+		mWebView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		
 		//Add any JS interfaces that we need like the DB
 		mWebView.addJavascriptInterface(new LocalDBInterface(this), "WhereatDB");
