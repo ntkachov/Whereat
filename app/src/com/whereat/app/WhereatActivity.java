@@ -1,26 +1,29 @@
 package com.whereat.app;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-import com.whereat.jsinterface.LocalDBInterface;
-
 import android.app.Activity;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-public class WhereatActivity extends Activity {
+import com.whereat.app.LocationHelper.LocationUpdateListener;
+import com.whereat.jsinterface.LocalDBInterface;
+
+public class WhereatActivity extends Activity implements LocationUpdateListener {
 
 	WebView mWebView; //This is all we need for this activity
+	LocationHelper locationHelper;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main); //We wont need any more views because our entire navigation is in html and js.
 
+		// Set up location updates
+		locationHelper = new LocationHelper(this);
+		locationHelper.registerForUpdates(this);
+		
 		//Setup WebView
 		mWebView = (WebView) findViewById(R.id.webview);
 		mWebView.getSettings().setJavaScriptEnabled(true);
@@ -38,6 +41,10 @@ public class WhereatActivity extends Activity {
 				Log.d("Whereat",message + " -- LINE: " + lineNumber + " : " + sourceID);
 			}
 		});
+	}
+
+	public void onLocationUpdate(Location location) {
+		Log.d("Whereat", "lat " + location.getLatitude() + " lng " + location.getLongitude());
 	}
 
 }
