@@ -1,5 +1,5 @@
 <html><head><meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;" /><script type="text/javascript">
-_SITEURL = "elnux3.cs.umass.edu/whereat/";
+_SITEURL = "http://elnux3.cs.umass.edu:9000/whereat/";
 WhereatLogin = {
 	setUName: function(uname){
 		WhereatDB.putPref("username", uname);
@@ -11,7 +11,7 @@ WhereatLogin = {
 			alert("No username set");
 			return;
 		}
-		$.get( _SITEURL + "/addUser/" +user, function(data){
+		$.get( _SITEURL + "addUser/" +user, function(data){
 			//codeGen.handleCode(JSON.parse(data));
 			console.log(data);
 		});

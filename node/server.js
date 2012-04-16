@@ -5,7 +5,7 @@ http.createServer(connectionManager).listen(7000);
 
 function connectionManager(req, res) {
 	var data = "";
-	var url = req.url.slice(1, req.url.length);
+	var url = req.url.slice(9, req.url.length);
 	console.log(url);
 	req.on('data', function(chunk) {
 		chunk = unescape(chunk.toString());
