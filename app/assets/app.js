@@ -9,7 +9,8 @@
 };
 */
 $(function(){
-	if(WhereatDB.getPref("SecCode") == "NONE"){
+	console.log("Where@ Version 1.0");
+	if(WhereatDB.getPref("code") == "NONE"){
 		$("#login").show();
 		$("#friends").hide();
 	}

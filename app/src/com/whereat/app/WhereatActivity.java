@@ -40,6 +40,7 @@ public class WhereatActivity extends Activity implements LocationUpdateListener 
 			public void onConsoleMessage(String message, int lineNumber, String sourceID){
 				Log.d("Whereat",message + " -- LINE: " + lineNumber + " : " + sourceID);
 			}
+			
 		});
 	}
 	

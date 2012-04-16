@@ -1,7 +1,7 @@
 _SITEURL = "elnux3.cs.umass.edu/whereat/";
 WhereatLogin = {
 	setUName: function(uname){
-		WhereatDB.setPref("username", uname);
+		WhereatDB.putPref("username", uname);
 	},
 	login: function(){
 		var user = WhereatDB.getPref("username");
@@ -10,13 +10,14 @@ WhereatLogin = {
 			alert("No username set");
 			return;
 		}
-		$.get( _SITEURL + "/addUser/" +uname, function(data){
+		$.get( _SITEURL + "/addUser/" +user, function(data){
 			//codeGen.handleCode(JSON.parse(data));
 			console.log(data);
 		});
 	},
 	onButton: function(){
 		var uname = $("#loginID").val();
+		console.log(uname);
 		this.setUName(uname);
 		this.login();
 	}
@@ -28,6 +29,6 @@ CodeGen = {
 		WhereatDB.getPref("code");
 	},
 	handleCode: function(data){
-		WhereatDB.setPref("code", data.code);
+		WhereatDB.putPref("code", data.code);
 	}
 };
