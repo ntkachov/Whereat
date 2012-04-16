@@ -8,7 +8,6 @@ WhereatDB = {
 	}
 };
 
-_SITEURL = "elnux3.cs.umass.edu/whereat/";
 $(function(){
 	if(WhereatDB.getPref("SecCode") == "NONE"){
 		$("#login").show();
@@ -31,10 +30,7 @@ $(function(){
 		return '<div class="friendBox clearfix"><div class="friendImg fl"></div><div class="friendText fl">' + friend + '</div><div class="friendText fr">' + text +' </div></div>'
 	}	
 	function login(){
-	}
-	function handleScroll(event){
-		$(".topBar").css("top", $(document).scrollTop());
+		WhereatLogin.onButton();		
 	}
 	$("#loginButton").click(login);
-	document.addEventListener("touchmove", handleScroll, false);
 });
