@@ -11,7 +11,7 @@ WhereatLogin = {
 			alert("No username set");
 			return;
 		}
-		$.get( _SITEURL + "addUser/" +user, function(data){
+		$.get( _SITEURL + "addUser?" +user, function(data){
 			//codeGen.handleCode(JSON.parse(data));
 			console.log(data);
 		});
