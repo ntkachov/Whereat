@@ -1,11 +1,26 @@
 var people = {};
 var friends = {};
 
+/* Note: 
+	The way to access these commands is through /command?param1&param2&param3&...&paramm
+*/
+
+
+function success(person, obj){
+	var r = {code: person};
+	if(obj != undefined){
+		for(var o in obj){
+			r[o] = obj[o];
+		}
+	}
+	return JSON.stringify(r);
+}
+
 function addFriend(person, friend){
 	if(friend in people && person in people){
 		friends[person].push(friend);
 		friends[friend].push(person);
-		return "Success";
+		return success(person);
 	} 
 	else{
 		return "Failure";
@@ -19,7 +34,7 @@ function addUser(person){
 	else{
 		people[person] = {coordx: 0, coordy:0};
 		friends[person] = [];
-		return "Success"
+		return success(person);
 	}
 }
 
@@ -27,7 +42,7 @@ function updatePerson(person, coordx, coordy){
 	if(person in people){
 		people[person].coordx = coordx;
 		people[person].coordy = coordy;
-		return "Success";
+		return success(person);
 	}
 	else{
 		return "Failure";
@@ -44,7 +59,7 @@ function getNearbyFriends(person){
 			}
 		}
 	}
-	return JSON.stringify(json);
+	return sucess(person, json);
 }
 
 function writeSend(funct){
