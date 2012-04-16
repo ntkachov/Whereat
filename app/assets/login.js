@@ -11,7 +11,8 @@ WhereatLogin = {
 			return;
 		}
 		$.get( _SITEURL + "/addUser/" +uname, function(data){
-			codeGen.handleCode(JSON.parse(data));
+			//codeGen.handleCode(JSON.parse(data));
+			console.log(data);
 		});
 	},
 	onButton: function(){

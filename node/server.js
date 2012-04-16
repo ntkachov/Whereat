@@ -1,7 +1,7 @@
 http = require('http');
 router = require('./router.js');
 
-http.createServer(connectionManager).listen(10000);
+http.createServer(connectionManager).listen(7000);
 
 function connectionManager(req, res) {
 	var data = "";

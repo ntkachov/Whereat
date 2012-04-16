@@ -1,5 +1,5 @@
 //Remove before device testing
-WhereatDB = { 
+/*WhereatDB = { 
 	getPref: function(string) {
 		return "fake";
 	},
@@ -7,7 +7,7 @@ WhereatDB = {
 		return;
 	}
 };
-
+*/
 $(function(){
 	if(WhereatDB.getPref("SecCode") == "NONE"){
 		$("#login").show();
