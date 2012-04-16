@@ -1,5 +1,5 @@
 //Remove before device testing
-/*WhereatDB = { 
+WhereatDB = { 
 	getPref: function(string) {
 		return "fake";
 	},
@@ -7,7 +7,8 @@
 		return;
 	}
 };
-*/
+
+_SITEURL = "elnux3.cs.umass.edu/whereat/";
 $(function(){
 	if(WhereatDB.getPref("SecCode") == "NONE"){
 		$("#login").show();
@@ -15,21 +16,25 @@ $(function(){
 	}
 	else{
 		var friendlist = ["Jake","Bill","Mike","John","Nick"];//fake friends list
+		friendlist = friendlist.concat(friendlist, friendlist);
 		listFriends(friendlist);
 	}
 
 	function listFriends(flist){
 		var friendList = $(".friendList")
+		flist.sort();
 		for(var friend in flist){
-			friendList.append(formatFriendBox(flist[friend]));
+			friendList.append(formatFriendBox(flist[friend], "Is nearby"));
 		}
 	}
-	function formatFriendBox(string){
-		return '<div class="friendBox">' + string + '</div>'
+	function formatFriendBox(friend, text){
+		return '<div class="friendBox clearfix"><div class="friendImg fl"></div><div class="friendText fl">' + friend + '</div><div class="friendText fr">' + text +' </div></div>'
 	}	
 	function login(){
-		var uname = $("#loginID").val();
-		alert(uname);
+	}
+	function handleScroll(event){
+		$(".topBar").css("top", $(document).scrollTop());
 	}
 	$("#loginButton").click(login);
+	document.addEventListener("touchmove", handleScroll, false);
 });

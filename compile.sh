@@ -1,6 +1,6 @@
 rm app/assets/view.html
 find app/assets | grep ".swp" | xargs rm
-echo "<html><head><script type=\"text/javascript\">" > app/assets/view
+echo '<html><head><meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;" /><script type="text/javascript">' > app/assets/view
 find app/assets | grep ".js" | xargs cat  >> app/assets/view
 echo "</script><style>" >> app/assets/view
 find app/assets | grep ".css" | xargs cat  >> app/assets/view

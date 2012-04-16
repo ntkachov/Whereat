@@ -21,7 +21,7 @@ public class WhereatActivity extends Activity implements LocationUpdateListener 
 		setContentView(R.layout.main); //We wont need any more views because our entire navigation is in html and js.
 
 		// Set up location updates
-		locationHelper = new LocationHelper(this);
+		//locationHelper = new LocationHelper(this);
 		//locationHelper.registerForUpdates(this);
 		
 		//Setup WebView
