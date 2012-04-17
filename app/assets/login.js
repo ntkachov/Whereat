@@ -1,4 +1,3 @@
-_SITEURL = "http://elnux3.cs.umass.edu:9000/whereat/";
 WhereatLogin = {
 	setUName: function(uname){
 		WhereatDB.putPref("username", uname);
@@ -10,8 +9,8 @@ WhereatLogin = {
 			alert("No username set");
 			return;
 		}
-		$.get( _SITEURL + "addUser?" +user, function(data){
-			//codeGen.handleCode(JSON.parse(data));
+		WhereatServ.addUser(user, function(data){
+			CodeGen.handleCode(JSON.parse(data));
 			console.log(data);
 		});
 	},
