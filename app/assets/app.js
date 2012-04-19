@@ -1,5 +1,5 @@
 //Remove before device testing
-/*WhereatDB = { 
+WhereatDB = { 
 	getPref: function(string) {
 		return "fake";
 	},
@@ -7,7 +7,7 @@
 		return;
 	}
 };
-*/
+
 $(function(){
 	console.log("Where@ Version 1.0");
 	if(WhereatDB.getPref("code") == "NONE"){
